@@ -1,1 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            whattoeat.com
+        </title>
+        <link rel="stylesheet" href="whattoeat.css"> 
 
+    </head>
+    <body>
+            <div class="header">
+                <img src="wtelogo.png" class="img1" alt="Image 1"> 
+                <a class="headername"> what to eat?</a>
+                <h1 class="headerdropdown"> </h1>
+                <div class="dropdown right-align">
+                    <button class="dropdown-button">Menu &#9660;</button>
+                    <div class="dropdown-content">
+                        <a href="home.html"><button class="dropdown-link">Home</button></a>
+                        <a href="about.html"><button class="dropdown-link">About</button></a>
+                        <a href="contact.html"><button class="dropdown-link">Contact</button></a>
+                    </div>
+                </div>
+            </div>    
+            <div class="image-container" >
+                <img src="centerquote.png" alt="Center Quote">
+            </div>
+            <div class="filters">
+                <select class="filter-dropdown" style="width:300px;">
+                    <option value="cusine">Cuisine</option>
+                    <option value="italian">Italian</option>
+                    <option value="mexican">Mexican</option>
+                    <option value="japanese">Japanese</option>
+                </select>
+                <select class="filter-dropdown" style="width:300px;">
+                    <option value="price">Price</option>
+                    <option value="$">$</option>
+                    <option value="$$">$$</option>
+                    <option value="$$$">$$$</option>
+                </select>
+                <select class="filter-dropdown" style="width:300px;">
+                    <option value="range">Range</option>
+                    <option value="10miles">10 Miles</option>
+                    <option value="25 Miles">25 Miles</option>
+                    <option value="50 Miles">50 Miles</option>
+                </select>
+            </div>
+        </body>
+</html>
