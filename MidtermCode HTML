@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>
+            whattoeat.com
+        </title>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+            <link rel="stylesheet" href="whattoeat.css"> 
+    </head>
+        <body>
+            <div class="container">
+<!-- Header -->
+                <nav class="navbar navbar-inverse custom-navbar">
+                    <div class="container-fluid">
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Home
+                                <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="whattoeat.html">Home</a></li>
+                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="#">WhatToEat?</a>
+                        </div>
+                    </div>
+                </nav>
+
+<!-- Main Image -->    
+
+                <div class="tableoffood">
+                    <img src="tableoffood.jpg" alt="tableoffood">
+                </div> 
+
+<!-- Parameters --> <br><br><br>
+
+                <div class="filters">
+                    <div class="filter-group">
+                        <div class="form-group">
+                            <label for="cuisineDropdown">Cuisine:</label>
+                            <select class="filter-dropdown" id="cuisineDropdown" style="width:300px;">
+                                <option value="North American">North American</option>
+                                <option value="South American">South American</option>
+                                <option value="European">European</option>
+                                <option value="African">African</option>
+                                <option value="Asian">Asian</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="priceDropdown">Price:</label>
+                            <select class="filter-dropdown" id="priceDropdown" style="width:300px;">
+                                <option value="$">$</option>
+                                <option value="$$">$$</option>
+                                <option value="$$$">$$$</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="distanceDropdown">Distance:</label>
+                            <select class="filter-dropdown" id="distanceDropdown" style="width:300px;">
+                                <option value="2miles">2 Miles</option>
+                                <option value="5miles">5 Miles</option>
+                                <option value="10miles">10 Miles</option>
+                                <option value="15miles">15 Miles</option>
+                                <option value="25miles">25 Miles</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+<!-- Submit -->
+
+                <div class="form-group" style="text-align: center;">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+
+            </div>
+        </body>
+</html>
