@@ -1,0 +1,18 @@
+.navbar-inverse .navbar-brand {
+        display: inline-block;
+        float: none;
+        padding-left: 400px;
+}
+
+.navbar-header {
+    text-align: center;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+}
+
+.filter-dropdown {
+    margin: 0px 10px;
+}
