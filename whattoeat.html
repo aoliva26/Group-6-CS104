@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>
+            whattoeat.com
+        </title>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+            <link rel="stylesheet" href="whattoeat.css"> 
+    </head>
+        <body>
+            <div class="container">
+<!-- Header -->
+                <nav class="navbar navbar-inverse custom-navbar">
+                    <div class="container-fluid">
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Home
+                                <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="whattoeat.html">Home</a></li>
+                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="#">NJIT WhatToEat?</a>
+                        </div>
+                    </div>
+                </nav>
+
+<!-- Main Image -->    
+
+                <div class="tableoffood">
+                    <img src="tableoffood.jpg" alt="tableoffood">
+                </div> 
+
+<!-- Parameters --> <br><br><br>
+
+						<div class="filters">
+							<div class="filter-group">
+							  <div class="form-group center-label">
+								<label>Choose your cuisines:</label>
+								<div class="row">
+									<div class="col-xs-4">
+										<div class="checkbox">
+											<img src="americaicon.jpg" alt="American" width="80" height="80">
+											<label><input type="checkbox" value="American">American</label>
+										</div>
+									</div>
+									<div class="col-xs-4">
+										<div class="checkbox">
+											<img src="latamericon.jpg" alt="American" width="80" height="80">
+											<label><input type="checkbox" value="Latin American">Latin American</label>
+										</div>
+									</div>
+									<div class="col-xs-4">
+										<div class="checkbox">
+											<img src="euroicon.jpg" alt="American" width="80" height="80">
+											<label><input type="checkbox" value="European">European</label>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-4">
+										<div class="checkbox">
+											<img src="africon.jpg" alt="American" width="80" height="80">
+											<label><input type="checkbox" value="African">African</label>
+										</div>
+									</div>
+									<div class="col-xs-4">
+										<div class="checkbox">
+											<img src="asiaicon.jpg" alt="American" width="80" height="80">
+											<label><input type="checkbox" value="Asian">Asian</label>
+										</div>
+									</div>
+									<div class="col-xs-4">
+										<div class="checkbox">
+											<img src="fficon.jpg" alt="American" width="80" height="80">
+											<label><input type="checkbox" value="Fast Food">Fast Food</label>
+										</div>
+									</div>
+								</div>
+							</div>
+                    	  </div>
+                		</div>
+
+<!-- Submit button -->
+	<form action="#" method="post" onsubmit="return validateForm()">
+    	<div class="form-group" style="text-align: center;">
+        	<button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+
+				
+
+<!-- prints restuarant that was chosen -->
+      <div id="selectedRestaurant" class="selected-Restaurant" style="text-align: center; margin-top: 10px;"></div>
+				
+				  <br><br><br><br><br><br>
+				
+<script>
+	// alert for if nothing is checked				
+	function validateForm() {
+		const checkboxes = $('input[type="checkbox"]:checked');
+		if (checkboxes.length === 0) {
+			alert("Please select at least one cuisine.");
+			return false;
+		} else {
+			return true;
+		}
+	}
+
+	
+	
+	//shuffles the list of restaurants randomly
+	$(document).ready(function () {
+		console.log("this part works");
+		function shuffleArray(array) {
+			for (let i = array.length - 1; i > 0; i--) {
+				const j = Math.floor(Math.random() * (i + 1));
+				[array[i], array[j]] = [array[j], array[i]];
+			}
+			return array;
+		}
+		
+		
+		//list of restaurants
+
+						const restaurants = [
+							{ name: 'Starbucks', cuisine: 'Fast Food' },
+							{ name: 'Intrinsic Cafe', cuisine: 'American' },
+							{ name: 'Uptown Grill', cuisine: 'American' },
+							{ name: 'Yogi Subs Inc.', cuisine: 'American' },
+							{ name: 'Lol Japanese Cuisine', cuisine: 'Asian' },
+							{ name: 'Z Grill', cuisine: 'European' },
+            				{ name: 'Subway', cuisine: 'Fast Food' },
+            				{ name: 'Giovanni Pizza Pasta & Grill', cuisine: 'European' },
+            				{ name: 'Washington Square Cafe', cuisine: 'American' },
+            				{ name: 'Roberts Pizzeria', cuisine: 'European' },
+							{ name: 'La Cocina', cuisine: 'Latin American' },
+            				{ name: 'McGoverns Tavern', cuisine: 'American' },
+            				{ name: '9 Thai Cuisine', cuisine: 'Asian' },
+            				{ name: 'Pronto Cafe', cuisine: 'American' },
+            				{ name: 'Cravings', cuisine: 'American' },
+							{ name: 'Vinnys Italian Gourmet', cuisine: 'European' },
+            				{ name: 'Burger Walla', cuisine: 'Asian' },
+            				{ name: 'Resa Grill', cuisine: 'American' },
+            				{ name: 'The Halal Guys', cuisine: 'Asian' },
+            				{ name: 'Queen Pizza', cuisine: 'European' },
+							{ name: 'Dunkin Donuts', cuisine: 'Fast Food' },
+            				{ name: 'Blimpie Americas Sub Shop', cuisine: 'American' },
+            				{ name: '27 Mix', cuisine: 'Asian' },
+            				{ name: 'Crown Fried Chicken', cuisine: 'American' },
+            				{ name: 'Darios', cuisine: 'Latin American' },
+							{ name: 'Turkish Pita Place', cuisine: 'European' },
+            				{ name: 'Mamas Pizza', cuisine: 'European' },
+            				{ name: 'Central Restaurant', cuisine: 'American' },
+            				{ name: 'Nicks Specialty Foods LLC', cuisine: 'American' },
+            				{ name: 'Nizi Sushi', cuisine: 'Asian' },
+							{ name: 'Kilkenny Alehouse', cuisine: 'American' },
+							{ name: 'Coney Island Texas Weiner Shop', cuisine: 'Fast Food' },
+							{ name: 'Blaze Pizza', cuisine: 'Fast Food' },
+							{ name: 'Mon Berger African Halal Restaurant', cuisine: 'African' },
+							{ name: 'Mi Gente Cafe', cuisine: 'Latin American' },
+							{ name: 'Sugar Daddys', cuisine: 'American' },
+							{ name: 'Panda Chinese Restaurant', cuisine: 'Asian' },
+							{ name: 'Deluxe Diner', cuisine: 'American' },
+							{ name: 'Maize', cuisine: 'American' },
+							{ name: 'Big Bite Restaurant', cuisine: 'American' },
+							{ name: 'Hobbys Delicatessen & Restaurant', cuisine: 'American' },
+							{ name: 'Pizza Plus', cuisine: 'European' },
+							{ name: 'Ark Gourmet Deli', cuisine: 'American' },
+							{ name: 'Wok II Chinese Restaurant', cuisine: 'Asian' },
+							{ name: 'Zams Deli and Grill', cuisine: 'American' },
+							{ name: 'Galleria Cafe', cuisine: 'American' },
+							{ name: 'McDonalds', cuisine: 'Fast Food' },
+							{ name: 'Broad Street Cafe', cuisine: 'American' },
+							{ name: 'Just Fish Cafe Express', cuisine: 'American' },
+							{ name: 'Priory Restaurant', cuisine: 'American' },
+							{ name: 'Mimi African Restaurant', cuisine: 'Africa' },
+							{ name: 'Harvest Table', cuisine: 'American' },
+							{ name: 'Barcade', cuisine: 'American' },
+							{ name: 'Hannas Deli', cuisine: 'American' },
+							{ name: 'NICO Kicthen + Bar', cuisine: 'American' },
+							{ name: 'Golden Krust Caribbean Bakery & Grill', cuisine: 'Latin American' },
+							{ name: 'Crab Palace 2', cuisine: 'American' },
+							{ name: '4 Seasons Cafe', cuisine: 'American' },
+							{ name: 'Blimpie', cuisine: 'American' },
+							{ name: 'Sakura Japan', cuisine: 'Asian' },
+							{ name: 'Joon Fried Fish Market', cuisine: 'American' },
+							{ name: 'Queen Pizza II', cuisine: 'European' },
+							{ name: 'Mikes Coffee Shop & Pizzeria', cuisine: 'European' },
+							{ name: 'Soul Refreshing', cuisine: 'American' },
+							{ name: 'Mercato Tomato Pie', cuisine: 'European' }
+						];
+
+		//form validation, processes cuisine selected and randomizes from that & displays restaurant chosen
+		$('form').submit(function (event) {
+			console.log("submit works");
+			event.preventDefault();
+			if (validateForm()) {
+				console.log("Form works, mad valid");
+				const selectedCuisines = $('input[type="checkbox"]:checked').map(function () {
+			return $(this).val();
+			}).get();
+
+				console.log("Selected Cuisines:", selectedCuisines);
+
+				const filteredRestaurants = restaurants.filter(function (restaurant) {
+			return selectedCuisines.includes(restaurant.cuisine);
+			});
+
+			console.log("Filtered Restaurants:", filteredRestaurants);
+
+			if (filteredRestaurants.length > 0) {
+				const shuffledRestaurants = shuffleArray(filteredRestaurants);
+				const randomRestaurant = shuffledRestaurants[0];
+
+				console.log("Random Restaurant:", randomRestaurant);
+
+				$('#selectedRestaurant').html("<p style='font-size:16px; font-weight: bold; color: #345671;'>Selected Restaurant:</p><p style='font-size:32px; font-weight: bold; color: #345671; background-color: #91e1ff; display: inline-block; padding: 5px 15px; border-radius: 10px;'>" + randomRestaurant.name + "</p>");
+			} else {
+				alert("No restaurants match the selected cuisines.");
+			}
+		} else {
+			console.log("Form is not valid!");
+		}
+	});
+});
+				</script>
+
+			</div>
+        </body>
+</html>

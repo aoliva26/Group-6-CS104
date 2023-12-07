@@ -1,0 +1,46 @@
+.navbar-inverse .navbar-brand {
+        display: inline-block;
+        float: none;
+        padding-left: 400px;
+}
+
+.navbar-header {
+    text-align: center;
+}
+
+.filter-dropdown {
+    margin: 0px 10px;
+}
+
+.checkbox {
+    margin-bottom: 10px;
+}
+
+.filters {
+    text-align: center;
+}
+
+.filter-group {
+    display: inline-block;
+}
+
+.form-group {
+    text-align: left; 
+}
+
+.checkbox label {
+    white-space: nowrap;
+    display: block;
+    width: 200px;
+    margin-bottom: 5px; 
+}
+
+.center-label {
+    text-align: center;
+}
+
+
+
+
+
+.
